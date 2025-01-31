@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lavishly+Yours&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=DynaPuff:wght@400..700&family=Playwrite+AU+SA:wght@100..400&family=Quintessential&display=swap" rel="stylesheet">
+    <title>To Do List</title>
+    <link rel="icon" type="image/icon" href="https://cdn-icons-png.flaticon.com/512/1695/1695141.png ">
+    <style>
+        body
+        {
+            background:#001A6E;
+        }
+        #me
+        {
+            color:#FFFFFF;
+            font-weight:bolder;
+            text-align:center;
+            font-size:42px;
+            font-family:Quintessential;
+            margin-top:15px;
+            animation:fade 2s ease-in-out;
+        }
+        @keyframes fade
+        {
+            from
+            {
+                opacity:0;
+            }
+            to
+            {
+                opacity:1;
+            }
+        }
+        @keyframes load
+        {
+            from
+            {
+                transform:translatey(50%);
+                opacity:0;
+            }
+            to
+            {
+                transform:translatey(0%);
+                opacity:1;
+            }
+        }
+        .list
+        {
+            width:400px;
+            height:300px;
+            margin-left:550px;
+            background-color:#E1FFBB;
+            border-radius:40px;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-evenly;
+            align-items:center;
+            animation:1.5s fade;
+
+
+        }
+        .task
+        {
+            width:80%;
+            display:flex;
+            justify-content:space-between;
+        }
+        input
+        {
+            border-radius:10px;
+            height:50px;
+            width:250px;
+            background-color:#074799;
+            border:1px solid #074799;
+            color:white;
+            text-align:center;
+            font-family:Quintessential;
+
+        }
+        button
+        {
+           border-radius:50%;
+            width:50px;
+            height:50px;
+            background-color:#074799;
+            border:1px solid #074799;
+            color:white;
+            text-align:center;
+            font-size:25px;
+        }
+        #to
+        {
+            font-family:Quintessential;
+            font-size:28px;
+        }
+        .box
+        {
+            border:2px solid #074799;
+            border-radius:20px;
+            width:80%;
+            height:140px;
+            display:flex;
+            justify-content:space-around;
+
+
+
+        }
+        .inbox
+        {
+            width:45%;
+            color:#001A6E;
+            font-family:Quintessential;
+            font-weight:bolder;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .count {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #074799;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+            color: white;
+            font-size:24px;
+        }
+        .inbox>p
+        {
+            margin:0;
+        }
+        #ot
+        {
+            font-size:22px;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="top">
+    <p id="me">''THERE IS NO TOMORROW''</p>
+</div>
+<div class="list">
+    <div class="box">
+        <div class="inbox">
+        <p id="to">ToDo List</p>
+        <p id="ot">Keep Going!</p>
+        </div>
+        <div class="count">
+            <p>0/0</p>
+        </div>
+    </div>
+<div class="task">
+    <input type="text" placeholder="Write your task...">
+    <button>+</button>
+</div>
+</div>
+</body>
+</html>
