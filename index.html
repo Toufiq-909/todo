@@ -58,7 +58,7 @@
             flex-direction:column;
             justify-content:space-evenly;
             align-items:center;
-            animation:fade 2s ease-in-out;
+
 
 
         }
@@ -140,6 +140,17 @@
         {
             font-size:22px;
         }
+        .list {
+            /* existing styles */
+            transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+        }
+
+        .list:hover {
+            transform: translateY(-10px) scale(1.03);
+            background-color: #D0FF9F;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+ 
 
 
 
