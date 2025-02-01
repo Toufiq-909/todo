@@ -154,12 +154,10 @@
             background-color: #D0FF9F;
 
         }
-
-
-
-
-
-
+        button:hover
+        {
+            cursor:pointer;
+        }
     </style>
 </head>
 <body>
@@ -173,13 +171,71 @@
         <p id="ot">Keep Going!</p>
         </div>
         <div class="count">
-            <p>0/0</p>
+            <p id="m">0/0</p>
         </div>
     </div>
 <div class="task">
     <input type="text" placeholder="Write your task...">
-    <button>+</button>
+    <button onclick="t.add()">+</button>
 </div>
 </div>
+<script>
+    let count=0;
+    let ncount=0;
+    class Todo {
+        add() {
+            let inp = document.querySelector("input").value;
+            if (inp!= "") {
+                let listbox = document.getElementsByClassName("list")[0];
+                let hupdate=window.getComputedStyle(listbox).height;
+                let hs=(parseInt(hupdate)+50).toString();
+                listbox.style.height=hs+"px";
+                let div=document.createElement("div");
+                div.style.borderRadius="10px"
+                div.style.display="flex";
+                div.style.alignItems="center";
+                let tasky=document.getElementsByClassName("task")[0];
+                div.style.width=window.getComputedStyle(tasky).width;
+                div.style.background="#074799";
+                let checkbox=document.createElement("input");
+                checkbox.style.width="15px";
+                checkbox.style.height="15px";
+                checkbox.type="checkbox";
+                checkbox.style.marginRight="10px";
+                checkbox.style.marginLeft="10px";
+                let text=document.createElement("p");
+                text.style.display="inline";
+                text.innerHTML=inp;
+                text.style.color="white";
+                text.style.fontFamily="Quintessential";
+                let butt=document.createElement("button");
+                butt.style.width="32px";
+                butt.style.height="32px";
+                butt.style.border="2px solid white"
+                butt.margin="0";
+                butt.style.marginLeft="180px";
+                butt.textContent="x";
+               butt.style.display="flex";
+               butt.style.alignItems="center";
+               butt.style.justifyContent="center";
+                butt.style.color="white";
+                butt.style.textalign="center";
+                butt.style.fontFamily="Quintessential"
+                div.appendChild(checkbox);
+                div.appendChild(text);
+                div.appendChild(butt);
+                listbox.appendChild(div);
+                document.querySelector("input").value="";
+                count++;
+                document.getElementById("m").innerHTML=ncount+"/"+count;
+            } else {
+
+            }
+
+
+        }
+    }
+    let t=new Todo();
+</script>
 </body>
 </html>
