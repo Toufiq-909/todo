@@ -36,17 +36,20 @@
         }
         @keyframes load
         {
-            from
-            {
-                transform:translatey(50%);
-                opacity:0;
+            0% {
+                opacity: 0;
+                transform: translateY(50%) scale(0.8);
             }
-            to
-            {
-                transform:translatey(0%);
-                opacity:1;
+            60% {
+                opacity: 1;
+                transform: translateY(-10%) scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
             }
         }
+
         .list
         {
             width:400px;
@@ -58,6 +61,7 @@
             flex-direction:column;
             justify-content:space-evenly;
             align-items:center;
+            animation:load 1s ease-in-out
 
 
 
@@ -142,15 +146,15 @@
         }
         .list {
             /* existing styles */
-            transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+            transition: transform 0.4s ease,background-color 0.4s ease;
         }
 
         .list:hover {
             transform: translateY(-10px) scale(1.03);
             background-color: #D0FF9F;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
         }
- 
+
 
 
 
