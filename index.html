@@ -158,6 +158,19 @@
         {
             cursor:pointer;
         }
+        #po
+        {
+            position:fixed;
+           left:1470px;
+            bottom:640px;
+            width:45px;
+            height:45px;
+            opacity:0;
+            font-size:12px;
+            font-family:Quintessential;
+            transition:opacity 1s ease;
+
+        }
     </style>
 </head>
 <body>
@@ -179,6 +192,7 @@
     <button onclick="t.add()">+</button>
 </div>
 </div>
+<button id="po" onclick=" t.clear()">Reset</button>
 <script>
     let count=0;
     let ncount=0;
@@ -188,7 +202,8 @@
             if (inp!= "") {
                 let listbox = document.getElementsByClassName("list")[0];
                 let hupdate=window.getComputedStyle(listbox).height;
-                let hs=(parseInt(hupdate)+50).toString();
+                console.log(hupdate);
+                let hs=(parseInt(hupdate)+65).toString();
                 listbox.style.height=hs+"px";
                 let div=document.createElement("div");
                 div.style.borderRadius="10px"
@@ -224,14 +239,28 @@
                 div.appendChild(checkbox);
                 div.appendChild(text);
                 div.appendChild(butt);
+                div.className="remove";
                 listbox.appendChild(div);
                 document.querySelector("input").value="";
                 count++;
                 document.getElementById("m").innerHTML=ncount+"/"+count;
+                document.getElementById("po").style.opacity=1;
             } else {
 
             }
 
+
+        }
+        clear()
+        {
+           let d=document.getElementsByClassName("remove");
+           while(d.length>0)
+            {
+                d[0].remove();
+            }
+            document.getElementsByClassName("list")[0].style.height="300px";
+            document.getElementById("po").style.opacity=0;
+            document.getElementById("m").innerHTML="0/0";
 
         }
     }
