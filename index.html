@@ -196,6 +196,12 @@
 <script>
     let count=0;
     let ncount=0;
+    document.querySelector("input").addEventListener("keypress",(event)=>{
+        if(event.key=='Enter')
+        {
+            t.add();
+        }
+    })
     class Todo {
         add() {
             let inp = document.querySelector("input").value;
@@ -245,8 +251,57 @@
                 count++;
                 document.getElementById("m").innerHTML=ncount+"/"+count;
                 document.getElementById("po").style.opacity=1;
-            } else {
+                checkbox.addEventListener("click",(event)=>{
+                    if(checkbox.checked)
+                    {
+                        let p = event.target.parentNode;
+                        let t = p.children[1];
+                        let c = t.innerHTML;
+                        let d = document.createElement("s");
+                        d.innerHTML = c;
+                        t.innerHTML = "";
+                        t.appendChild(d);
+                        ncount++;
+                        let circle=document.querySelector("#m");
+                        circle.innerHTML=ncount+"/"+count;
+                    }
+                    else
+                    {
+                        let p = event.target.parentNode;
+                        let t = p.children[1];
+                        let c = t.children[0].innerHTML;
+                        console.log(c);
+                        t.removeChild(t.children[0]);
+                        t.innerHTML=c;
+                        ncount--;
+                        let circle=document.querySelector("#m");
+                        circle.innerHTML=ncount+"/"+count;
+                    }
 
+                });
+                butt.addEventListener("click",(event)=>{
+                    let par=event.target.parentNode;
+                    par.parentNode.removeChild(par);
+                    let hcurrent=window.getComputedStyle(document.getElementsByClassName("list")[0]).height;
+                    hcurrent=parseInt(hcurrent);
+                    hcurrent=hcurrent-65;
+                    console.log(hcurrent);
+                    let he=hcurrent.toString();
+                    document.getElementsByClassName("list")[0].style.height=he+"px";
+                    count--;
+                    if(checkbox.checked)
+                    {
+                        ncount--;
+                    }
+                    let circle=document.querySelector("#m");
+                    circle.innerHTML=ncount+"/"+count;
+                    if(count==0)
+                    {
+                        document.querySelector("#po").style.opacity="0";
+                    }
+
+
+                });
             }
 
 
@@ -263,7 +318,6 @@
             document.getElementById("m").innerHTML="0/0";
             count=0;
             ncount=0;
-
         }
     }
     let t=new Todo();
