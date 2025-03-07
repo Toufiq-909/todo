@@ -8,7 +8,7 @@ async function tasks()
     }
     else
     {
-        let res=await fetch("http://localhost:3000/?id="+a+"&p="+b);
+        let res=await fetch("https://todus.vercel.app/?id="+a+"&p="+b);
         window.location.href=res.url;
     }
 }
