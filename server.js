@@ -21,7 +21,7 @@ app.get("/",(req,res)=>{
             if(data[j].password===p)
             {
                 let a=data[j].tasks;
-                let dom=cheerio.load(fs.readFileSync('list.html','utf-8'))
+                let dom=cheerio.load(fs.readFileSync('public/list.html','utf-8'))
                 for(let i=0;i<a.length;i++)
                 {
 
