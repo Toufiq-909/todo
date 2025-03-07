@@ -441,7 +441,7 @@
         we();
         async function we()
         {
-            let a=await fetch("http://localhost:3000/data?id=1");
+            let a=await fetch("https://todus.vercel.app/data?id=1");
             let b=await a.json();
             console.log("inside checked"+b)
             for(let i=0;i<b.length;i++)
@@ -467,7 +467,7 @@
     async function hello()
     {
         console.log("inside hlloe")
-        let a=await fetch("http://localhost:3000/add",{
+        let a=await fetch("https://todus.vercel.app/add",{
             method:"PUT",
             headers: {
                 "Content-Type": "application/json"  // ✅ Ensure JSON parsing works
@@ -481,7 +481,7 @@
     }
     async function skip(x)
     {
-        let a=await fetch("http://localhost:3000/rm",{
+        let a=await fetch("https://todus.vercel.app/rm",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json"
@@ -495,7 +495,7 @@
     async function nig(x)
     {
 
-        let a=await fetch("http://localhost:3000/check",{
+        let a=await fetch("https://todus.vercel.app/check",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json"
@@ -509,7 +509,7 @@
     }
     async function pig(x)
     {
-        let a=await fetch("http://localhost:3000/uncheck",{
+        let a=await fetch("https://todus.vercel.app/uncheck",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json"
@@ -524,7 +524,7 @@
     }
     async function rem()
     {
-        let a=await fetch("http://localhost:3000/remove",{
+        let a=await fetch("https://todus.vercel.app/remove",{
             method:"delete",
             headers:{
                 "Content-Type":"application/json"
