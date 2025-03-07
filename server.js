@@ -6,6 +6,7 @@ const cors = require('cors');
 app.use(cors());
 app.use(exp.json()); // Middleware for JSON parsing
 
+app.use(express.static(path.join(__dirname, "public")));
 
 const fs=require("fs");
 let data=JSON.parse(fs.readFileSync("db.json","UTF-8"));
