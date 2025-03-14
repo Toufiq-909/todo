@@ -454,7 +454,7 @@
         {
             console.log(localStorage.getItem('tt'));
 
-            let a=await fetch("http://localhost:3000/data",{
+            let a=await fetch("https://toduslist.netlify.app/data",{
                 headers:{
                     "a":localStorage.getItem('tt')
                 }
@@ -488,7 +488,7 @@
         console.log("inside hlloe")
       console.log("inpot value "+document.querySelector("input").value)
 
-        let a=await fetch("http://localhost:3000/add",{
+        let a=await fetch("https://toduslist.netlify.app/add",{
             method:"PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -506,7 +506,7 @@
         console.log(x);
 
 
-        let a=await fetch("http://localhost:3000/rm",{
+        let a=await fetch("https://toduslist.netlify.app/rm",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json",
@@ -521,7 +521,7 @@
     {
         console.log(localStorage.getItem('tt'));
 
-        let a=await fetch("http://localhost:3000/check",{
+        let a=await fetch("https://toduslist.netlify.app/check",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json",
@@ -537,7 +537,7 @@
     {
         console.log(localStorage.getItem('tt'));
 
-        let a=await fetch("http://localhost:3000/uncheck",{
+        let a=await fetch("https://toduslist.netlify.app/uncheck",{
             method:"PUT",
             headers:{
                 "Content-Type":"application/json",
@@ -553,7 +553,7 @@
     async function rem()
     {
         console.log(localStorage.getItem('tt'));
-        let a=await fetch("http://localhost:3000/remove",{
+        let a=await fetch("https://toduslist.netlify.app/remove",{
             method:"delete",
             headers:{
                 "Content-Type":"application/json",

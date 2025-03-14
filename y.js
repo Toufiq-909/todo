@@ -1,7 +1,7 @@
 async function login() {
     let x = document.querySelector("#u").value;
     let y = document.querySelector("#p").value;
-    let a=await fetch("http://localhost:3000/new",{
+    let a=await fetch("https://toduslist.netlify.app/new",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"

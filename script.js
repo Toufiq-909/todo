@@ -9,7 +9,7 @@ async function tasks()
     else
     {
         console.log("are we executing")
-        let res=await fetch("http://localhost:3000/?id="+a+"&p="+b);
+        let res=await fetch("https://toduslist.netlify.app/?id="+a+"&p="+b);
         if(res.status==200)
         {
             console.log("are we executing")
